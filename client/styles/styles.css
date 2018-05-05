@@ -1,18 +1,24 @@
+@font-face {
+  font-family: 'Krungthep';
+  src: url('Krungthep.ttf') format('truetype');
+}
+
 body {
-    background: #eee;
-    text-align: center;
-    padding: 0 25px;
-    font-family: arial, sans-serif;
+  background: black;
+  text-align: center;
+  padding: 50px 25px;
+  color: white;
+  font-family: 'Krungthep', arial, sans-serif;
 }
 
 #main, #chats {
-    width: 500px;
-    margin: auto;
-    text-align: left;
-    background: white;
-    padding: 50px 60px;
-    border: solid #ddd;
-    border-width: 0 1px 1px 1px;
+  width: 500px;
+  margin: auto;
+  text-align: left;
+  background: black;
+  padding: 50px 60px;
+  border-top: 3px solid #18e739;
+  box-shadow: 0 0  3px 1px #18e739;
 }
 
 #main h1 {
@@ -46,17 +52,68 @@ body {
     line-height: 13px;
 }
 
-form {
-    padding: 20px;
-    padding-left: 0;
-    margin-bottom: 20px;
+#borderimg2 {
+  border-top: 12px solid black;
+  padding: 15px;
+  -webkit-border-image: url('border.png') 38% round; /* Safari 3.1-5 */
+  -o-border-image: url('border.png') 38% round; /* Opera 11-12.1 */
+  border-image: url('border.png') 38% round;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
-form input[type=text] {
-    margin-right: 10px;
-    width: 70%;
-    font-size: 12px;
-    padding: 5px;
+form {
+  padding: 20px;
+  padding-left: 0;
+  margin-bottom: 20px;
+  border-top: 1px solid #888888;
+  border-bottom: 1px solid #888888;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 90px;
+}
+
+form input[type=textarea] {
+  margin-right: 10px;
+  width: 70%;
+  height: 45px;
+  box-sizing: border-box;
+  outline: none;
+  padding: 10px;
+  font-family: Helvetica;
+  font-weight: 100;
+  font-size: 15px;
+  filter: invert(1);
+}
+
+input[type=submit] {
+  background-image: url('arrow.png');
+  cursor: pointer;
+  background-size: 100%;
+  width: 45px;
+  height: 45px;
+  border: none;
+  color: transparent;
+  background-color: white;
+  transition: 0.1s ease-in;
+  filter: invert(1);
+}
+
+input[type=submit]:hover {
+  opacity: 0.4;
+}
+
+select {
+  margin: 21px 5px;
+  width: 40%;
+  outline: none;
+  border-radius: none;
+  background: none;
+  box-shadow: none;
+  filter: invert(1);
+  overflow: hidden;
 }
 
 .chat {
@@ -66,7 +123,8 @@ form input[type=text] {
 }
 
 .chat .username {
-    font-weight: 800;
+    font-weight: 800px;
+    color:blue;
 }
 
 .chat:hover {
