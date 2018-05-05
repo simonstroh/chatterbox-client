@@ -6,7 +6,7 @@ var app = {
   init: function() {
     
   },
-  server: 'http://parse.sfm6.hackreactor.com/chatterbox/classes/messages',
+  server: 'http://parse.sfm8.hackreactor.com/chatterbox/classes/messages',
   send: function(message) {
     console.log(JSON.stringify(message))
     $.ajax({
@@ -22,10 +22,11 @@ var app = {
   fetch: function(data) {
     $.ajax({
       url: this.server,
+      data: {order: '-createdAt'},
       type: 'GET',
       // dataType: 'text',
       success: function(data) {
-        console.log(JSON.stringify(data))
+        console.log(data)
         // app.renderMessage((JSON.stringify(data)))
       }
     })
@@ -48,6 +49,9 @@ var app = {
         }
       }
     })  
+  },
+  escapedText: function(input) {
+    return input.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   },
   fetchRoom: function(data) {
     $.ajax({
@@ -78,8 +82,9 @@ var app = {
     // var newMessage = JSON.parse(message);
     
     // message.username = window.location.search.slice(window.location.search.indexOf('=') + 1, window.location.search.length)
-
-    $('#chats').append(`<div><span onclick ="app.handleUsernameClick()" class="username">${message.username}</span>: ${message.text}</div>`);
+    var escapedUsername = app.escapedText(message.username)
+    var escapedMessage = app.escapedText(message.text)
+    $('#chats').append(`<div><span onclick ="app.handleUsernameClick()" class="username">${escapedUsername}</span>: ${escapedMessage}</div>`);
   },
   renderRoom: function(roomname) {
     var uniqueData = _.uniq(notYourData)
