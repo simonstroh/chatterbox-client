@@ -56,9 +56,9 @@ body {
 #borderimg2 {
   border-top: 12px solid black;
   padding: 15px;
-  -webkit-border-image: url('border.png') 38% round; /* Safari 3.1-5 */
-  -o-border-image: url('border.png') 38% round; /* Opera 11-12.1 */
-  border-image: url('border.png') 38% round;
+  -webkit-border-image: url('https://www.dropbox.com/s/15yibtsgxw8ragi/border.png?raw=1') 38% round; /* Safari 3.1-5 */
+  -o-border-image: url('https://www.dropbox.com/s/15yibtsgxw8ragi/border.png?raw=1') 38% round; /* Opera 11-12.1 */
+  border-image: url('https://www.dropbox.com/s/15yibtsgxw8ragi/border.png?raw=1') 38% round;
   max-width: 1080px;
   margin: 0 auto;
 }
@@ -94,7 +94,7 @@ form input[type=textarea] {
 }
 
 input[type=submit] {
-  background-image: url('arrow.png');
+  background-image: url('https://www.dropbox.com/s/mowwiz0k3s7dkco/arrow.png?raw=1');
   cursor: pointer;
   background-size: 100%;
   width: 45px;

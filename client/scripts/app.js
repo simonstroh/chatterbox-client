@@ -82,8 +82,8 @@ var app = {
     // var newMessage = JSON.parse(message);
     
     // message.username = window.location.search.slice(window.location.search.indexOf('=') + 1, window.location.search.length)
-    var escapedUsername = app.escapedText(message.username)
-    var escapedMessage = app.escapedText(message.text)
+    var escapedUsername = app.escapedText(message.username + '')
+    var escapedMessage = app.escapedText(message.text + '')
     $('#chats').append(`<div><span onclick ="app.handleUsernameClick()" class="username">${escapedUsername}</span>: ${escapedMessage}</div>`);
   },
   renderRoom: function(roomname) {
